@@ -1,0 +1,72 @@
+{
+    "food":[
+      {
+        "id":1,
+        "image": "https://picsum.photos/400/400/?image=476",
+        "name": "제육볶음",
+        "recipe": [
+          {
+            "id":1,
+            "material":"돼지고기"
+          },
+          {"id":2,
+            "material":"상추"},
+          {"id":3,"material":"양파"},
+          {"id":4,"material":"대파"},
+          {"id":5,"material":"굴소스"},
+          {"id":6,"material":"고추장"}
+        ],
+        "price": 75.00,
+        "badge": "new"
+      },
+      {
+        "id":2,
+        "image": "https://picsum.photos/400/400/?image=478",
+        "name": "생선구이",
+        "recipe": "",
+        "price": 92.50,
+        "badge": null
+      },
+      {
+        "id":3,
+        "image": "https://picsum.photos/400/400/?image=479",
+        "name": "만두",
+        "recipe": "",
+        "price": 165.90,
+        "badge": null
+      },
+      {
+        "id":4,
+        "image": "https://picsum.photos/400/400/?image=480",
+        "name": "돈가스",
+        "recipe": "",
+        "price": 29.50,
+        "badge": "sale"
+      },
+      {
+        "id":5,
+        "image": "https://picsum.photos/400/400/?image=476",
+        "name": "마파두부",
+        "recipe": "",
+        "price": 75.00,
+        "badge": "new"
+      },
+      {
+        "id":6,
+        "image": "https://picsum.photos/400/400/?image=478",
+        "name": "함바그",
+        "recipe": "",
+        "price": 92.50,
+        "badge": null
+      },
+      {
+        "id":7,
+        "image": "https://picsum.photos/400/400/?image=479",
+        "name": "야기소바",
+        "recipe": "",
+        "price": 165.90,
+        "badge": null
+      }
+    ]
+  }
+  
