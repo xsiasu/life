@@ -7,14 +7,15 @@
         "recipe": [
           {
             "id":1,
-            "material":"돼지고기"
+            "material":"돼지고기",
+            "status":"사야돼"
           },
           {"id":2,
-            "material":"상추"},
-          {"id":3,"material":"양파"},
-          {"id":4,"material":"대파"},
-          {"id":5,"material":"굴소스"},
-          {"id":6,"material":"고추장"}
+            "material":"상추","status":"사야돼"},
+          {"id":3,"material":"양파","status":"샀어"},
+          {"id":4,"material":"대파","status":"사야돼"},
+          {"id":5,"material":"굴소스","status":"샀어"},
+          {"id":6,"material":"고추장","status":"사야돼"}
         ],
         "price": 75.00,
         "badge": "new"
@@ -23,7 +24,13 @@
         "id":2,
         "image": "https://picsum.photos/400/400/?image=478",
         "name": "생선구이",
-        "recipe": "",
+        "recipe": [
+          {
+            "id":1,
+            "material":"생선",
+            "status":"사야돼"
+          }
+        ],
         "price": 92.50,
         "badge": null
       },
@@ -31,7 +38,15 @@
         "id":3,
         "image": "https://picsum.photos/400/400/?image=479",
         "name": "만두",
-        "recipe": "",
+        "recipe": [
+          {
+            "id":1,
+            "material":"돼지고기",
+            "status":"사야돼"
+          },
+          {"id":2,
+            "material":"만두피","status":"사야돼"}
+        ],
         "price": 165.90,
         "badge": null
       },
@@ -39,7 +54,13 @@
         "id":4,
         "image": "https://picsum.photos/400/400/?image=480",
         "name": "돈가스",
-        "recipe": "",
+        "recipe": [
+          {
+            "id":1,
+            "material":"돈가스",
+            "status":"사야돼"
+          }
+        ],
         "price": 29.50,
         "badge": "sale"
       },
@@ -47,7 +68,13 @@
         "id":5,
         "image": "https://picsum.photos/400/400/?image=476",
         "name": "마파두부",
-        "recipe": "",
+        "recipe": [
+          {
+            "id":1,
+            "material":"두부",
+            "status":"사야돼"
+          }
+        ],
         "price": 75.00,
         "badge": "new"
       },
@@ -55,7 +82,13 @@
         "id":6,
         "image": "https://picsum.photos/400/400/?image=478",
         "name": "함바그",
-        "recipe": "",
+        "recipe": [
+          {
+            "id":1,
+            "material":"갈은돼지고기",
+            "status":"사야돼"
+          }
+        ],
         "price": 92.50,
         "badge": null
       },
@@ -63,7 +96,13 @@
         "id":7,
         "image": "https://picsum.photos/400/400/?image=479",
         "name": "야기소바",
-        "recipe": "",
+        "recipe": [
+          {
+            "id":1,
+            "material":"야기소바면",
+            "status":"사야돼"
+          }
+        ],
         "price": 165.90,
         "badge": null
       }

@@ -19,6 +19,7 @@ export const foodListModule = {
           ...food,
           status :  "사야돼"
         });        
+
       } else {
         alert("선택했어")
       }
@@ -37,8 +38,18 @@ export const foodListModule = {
         } else {
           state.cart[index].status = "사야돼"
         }
-       
-    },    
+    },  
+    // statusControlItem(state, id) {
+    //   const statusItem = state.cart.filter(
+    //     (item) => item.id === id);
+    //     const index = state.cart.findIndex((item) => item.id === id);
+    //     if(statusItem[0].status === "사야돼"){
+          
+    //       state.cart[index].status = "샀어"
+    //     } else {
+    //       state.cart[index].status = "사야돼"
+    //     }
+    // },            
    },
   actions: {
     async setFoodList({commit}) {
@@ -53,6 +64,9 @@ export const foodListModule = {
     },
     statusControl({commit}, id) {
       commit('statusControl',id)
+    },
+    statusControlItem({commit}, id){
+      commit('statusControlItem',id)
     }
    },
   getters: { }

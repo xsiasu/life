@@ -17,7 +17,12 @@
             v-for="(recipe, j) in food.recipe"
             :key="j"
           >
-            {{ food.recipe[j].material }}
+            <span>{{ food.recipe[j].material }}</span>
+            <v-btn
+              @click="statusControlItem(food.recipe[j].id)"
+            >
+              {{ food.recipe[j].status }}
+            </v-btn>
           </li>
         </ul>        
       </li>
@@ -41,6 +46,10 @@ export default {
     },
     statusControl(id) {
       this.$store.dispatch('foodListModule/statusControl',id)
+    },
+    statusControlItem(id) {
+      // this.$store.dispatch('foodListModule/statusControlItem',id)
+      console.log(id)
     }
   }
 }
