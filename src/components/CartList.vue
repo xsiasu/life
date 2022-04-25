@@ -27,6 +27,13 @@
         </ul>        
       </li>
     </ul>
+    
+    <router-link
+      v-if="cart.length > 0"
+      :to="{name:'final'}"
+    >
+      장보러가기
+    </router-link>
   </div> 
 </template>
 

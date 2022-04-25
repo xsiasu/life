@@ -1,6 +1,5 @@
 <template>
   <div>
-    <FoodList />
     <EverydayBuy />
   </div>
 </template>
@@ -11,13 +10,13 @@ import { defineComponent } from 'vue';
 
 
 // Components
-import FoodList from '../components/FoodList.vue';
+// import FoodList from '../components/FoodList.vue';
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {  
-    FoodList,
+    
     EverydayBuy
   },
 });
