@@ -4,6 +4,7 @@
         "id":1,
         "image": "https://picsum.photos/400/400/?image=476",
         "name": "제육볶음",
+        "subtitle": "매콤한 맛의 고추장 돼지고기 볶음 언제나 기본은 할수 있지",
         "recipe": [
           {
             "id":1,
@@ -24,6 +25,7 @@
         "id":2,
         "image": "https://picsum.photos/400/400/?image=478",
         "name": "생선구이",
+        "subtitle": "가스레인지 오븐에 넣고 튀기기만 하면 끝, 생선을 잘 선택해야함",
         "recipe": [
           {
             "id":1,
@@ -38,6 +40,7 @@
         "id":3,
         "image": "https://picsum.photos/400/400/?image=479",
         "name": "만두",
+        "subtitle": "만두 속을 만들어야 하니 손은 많이 가지만 그래도 만들면 정성도 보이고 보람도 있음",
         "recipe": [
           {
             "id":1,
@@ -54,6 +57,7 @@
         "id":4,
         "image": "https://picsum.photos/400/400/?image=480",
         "name": "돈가스",
+        "subtitle":"호영이 소희도 좋아하는 돈가스 언제 먹어도 맛있어",
         "recipe": [
           {
             "id":1,
@@ -68,6 +72,7 @@
         "id":5,
         "image": "https://picsum.photos/400/400/?image=476",
         "name": "마파두부",
+        "subtitle":"마파두부 소스만 잘 만들면 반찬없이도 잘 먹을수 있는 아이템",
         "recipe": [
           {
             "id":1,
@@ -82,6 +87,7 @@
         "id":6,
         "image": "https://picsum.photos/400/400/?image=478",
         "name": "함바그",
+        "subtitle":"가끔씩 먹어주면 좋은 음식, 호영이도 좋아해",
         "recipe": [
           {
             "id":1,
@@ -95,7 +101,8 @@
       {
         "id":7,
         "image": "https://picsum.photos/400/400/?image=479",
-        "name": "야기소바",
+        "name": "야키소바",
+        "subtitle":"간단하게 만들수 있어서 좋아 가끔씩 먹고 싶어지는 야키소바",
         "recipe": [
           {
             "id":1,

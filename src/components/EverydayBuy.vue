@@ -1,29 +1,171 @@
 <template>
-  <swiper
-    class="swiper"
-    :modules="modules"
-    :space-between="30"
-    :slides-per-view="3"
-    :free-mode="true"
-    :pagination="{ clickable: true }"
-  >
-    <swiper-slide
-      v-for="(food,index) in foodList"
-      :key="index"
-      class="slide"
+  <div>
+    <h1>매일 먹는거</h1>
+    <swiper
+      class="swiper"
+      :modules="modules"
+      :free-mode="true"
+      :slides-per-view="2"
+      :space-between="10"
+      :breakpoints="{
+        '640': {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        '768': {
+          slidesPerView: 4,
+          spaceBetween: 20
+        },
+      }"    
     >
-      <div @click="addToCart(food)">
-        <img :src="food.image">
-      </div>
-      <span>{{ food.name }}</span>          
-    </swiper-slide>
-  </swiper>
+      <swiper-slide
+        v-for="(food,index) in foodList"
+        :key="index"
+        class="slide"
+      >
+        <div @click="addToCart(food)">
+          <v-img
+            :src="food.image"
+            aspect-ratio="1"
+            class="rounded-xl"
+            max-height="226px"
+          >
+            <template #placeholder>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                />
+              </v-row>
+            </template>
+          </v-img>
+          <p class="text-h6">
+            {{ food.name }}
+          </p>  
+          <p class="text-subtitle-1">
+            {{ food.subtitle }}
+          </p>          
+        </div>
+      </swiper-slide>
+    </swiper>   
+    
+    <h1>자주 먹는거</h1>
+    <swiper
+      class="swiper"
+      :modules="modules"
+      :free-mode="true"
+      :slides-per-view="2"
+      :space-between="10"
+      :breakpoints="{
+        '640': {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        '768': {
+          slidesPerView: 4,
+          spaceBetween: 20
+        },
+      }"    
+    >
+      <swiper-slide
+        v-for="(food,index) in foodList"
+        :key="index"
+        class="slide"
+      >
+        <div @click="addToCart(food)">
+          <v-img
+            :src="food.image"
+            aspect-ratio="1"
+            class="rounded-xl"
+            max-height="226px"
+          >
+            <template #placeholder>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                />
+              </v-row>
+            </template>
+          </v-img>
+          <p class="text-h6">
+            {{ food.name }}
+          </p>  
+          <p class="text-subtitle-1">
+            {{ food.subtitle }}
+          </p>          
+        </div>
+      </swiper-slide>
+    </swiper>      
+    
+    <h1>가끔 먹는거</h1>
+    <swiper
+      class="swiper"
+      :modules="modules"
+      :free-mode="true"
+      :slides-per-view="2"
+      :space-between="10"
+      :breakpoints="{
+        '640': {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        '768': {
+          slidesPerView: 4,
+          spaceBetween: 20
+        },
+      }"    
+    >
+      <swiper-slide
+        v-for="(food,index) in foodList"
+        :key="index"
+        class="slide"
+      >
+        <div @click="addToCart(food)">
+          <v-img
+            :src="food.image"
+            aspect-ratio="1"
+            class="rounded-xl"
+            max-height="226px"
+          >
+            <template #placeholder>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                />
+              </v-row>
+            </template>
+          </v-img>
+          <p class="text-h6">
+            {{ food.name }}
+          </p>  
+          <p class="text-subtitle-1">
+            {{ food.subtitle }}
+          </p>          
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import {mapState} from 'vuex';
-  import { Pagination,FreeMode } from 'swiper'
+
+  import { Pagination,FreeMode, Scrollbar } from 'swiper'
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
   // import swiper module styles
@@ -42,9 +184,12 @@ import {mapState} from 'vuex';
     },
  setup() {
       return {
-        modules: [Pagination, FreeMode]
+        modules: [Pagination, FreeMode,Scrollbar]
       }
     },
+    data: () => ({
+      sheet: false,
+    }),
    
 
   computed:{
@@ -67,9 +212,16 @@ import {mapState} from 'vuex';
 
   .swiper {
     @include swiper-wrapper();
+    
+    height:auto
+    
+    
   }
 
   .slide {
     @include swiper-slide();
+    max-width:226px;
+    align-items:start
   }
+
 </style>
