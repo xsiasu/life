@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import EverydayBuy from '@/components/EverydayBuy.vue';
+import EverydayBuy from '@/components/home/EverydayBuy.vue';
 import { defineComponent } from 'vue';
 
 

@@ -1,19 +1,29 @@
 <template>
   <div>
-    <h1>오늘의 요리</h1>
-    <ul>
-      <li
+    <h1 class="mt-16">
+      오늘의 요리
+    </h1>
+    <v-list class="mt-10">
+      <div
         v-for="(food,index) in cart"
         :key="index"
       >
-        <img :src="food.image">
+        <v-img
+          :src="food.image"
+          max-width="80"
+          height="80"
+          cover
+          class="rounded"
+        />
         {{ food.name }}
         <span @click="statusControl(food.id)">
           {{ food.status }}
         </span>
-        <span @click="delItem(food.id)">delete</span>
-        <ul>
-          <li
+        <v-btn @click="delItem(food.id)">
+          <v-icon>delte</v-icon>
+        </v-btn>
+        <v-list>
+          <div
             v-for="(recipe, j) in food.recipe"
             :key="j"
           >
@@ -23,10 +33,10 @@
             >
               {{ food.recipe[j].status }}
             </v-btn>
-          </li>
-        </ul>        
-      </li>
-    </ul>
+          </div>
+        </v-list>
+      </div>
+    </v-list>
     
     <router-link
       v-if="cart.length > 0"

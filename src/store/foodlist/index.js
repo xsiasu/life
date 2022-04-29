@@ -14,14 +14,15 @@ export const foodListModule = {
     addToCart(state, food) {
       const cartItems = state.cart.filter(
         (cartItem) => cartItem.id === food.id);
+      
       if(cartItems.length === 0){
         state.cart.push({
           ...food,
           status :  "사야돼"
         });        
-
       } else {
-        alert("선택했어")
+
+        alert('선택했어')
       }
     },
     delItem(state, id) {
