@@ -3,30 +3,46 @@
     <h1 class="mt-16">
       오늘의 요리
     </h1>
-    <v-list class="mt-10">
-      <div
-        v-for="(food,index) in cart"
-        :key="index"
-      >
+    
+    <v-row
+      v-for="(food,index) in cart"
+      :key="index"
+    >
+      <v-col>
         <v-img
           :src="food.image"
+          transition="false"
           max-width="80"
           height="80"
           cover
           class="rounded"
         />
-        {{ food.name }}
+      </v-col>
+      <v-col>
+        <p>
+          {{ food.name }}
+        </p>
+        <p>{{ food.subtitle }}</p>
         <span @click="statusControl(food.id)">
           {{ food.status }}
         </span>
-        <v-btn @click="delItem(food.id)">
-          <v-icon>delte</v-icon>
+        <v-btn
+          icon
+          @click="delItem(food.id)"
+        >
+          <v-icon
+            color="orange darken-2"
+            small
+          >
+            mdi-cart-remove
+          </v-icon>
         </v-btn>
         <v-list>
           <div
             v-for="(recipe, j) in food.recipe"
             :key="j"
           >
+            <span>{{ food.recipe[j].id }}</span>
             <span>{{ food.recipe[j].material }}</span>
             <v-btn
               @click="statusControlItem(food.recipe[j].id)"
@@ -35,8 +51,10 @@
             </v-btn>
           </div>
         </v-list>
-      </div>
-    </v-list>
+      </v-col>
+    </v-row>
+    <v-divider class="mt-4" />
+    
     
     <router-link
       v-if="cart.length > 0"
@@ -65,8 +83,8 @@ export default {
       this.$store.dispatch('foodListModule/statusControl',id)
     },
     statusControlItem(id) {
-      // this.$store.dispatch('foodListModule/statusControlItem',id)
-      console.log(id)
+      this.$store.dispatch('foodListModule/statusControlItem',id)
+      
     }
   }
 }

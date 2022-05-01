@@ -13,9 +13,9 @@
           },
           {"id":2,
             "material":"상추","status":"사야돼"},
-          {"id":3,"material":"양파","status":"샀어"},
+          {"id":3,"material":"양파","status":"사야돼"},
           {"id":4,"material":"대파","status":"사야돼"},
-          {"id":5,"material":"굴소스","status":"샀어"},
+          {"id":5,"material":"굴소스","status":"사야돼"},
           {"id":6,"material":"고추장","status":"사야돼"}
         ],
         "price": 75.00,

@@ -5,7 +5,6 @@ export const foodListModule = {
   state: {
     foodList :[],
     cart : [],
-    
   },
   mutations: {
     setFoodList(state, foodList) {
@@ -32,6 +31,7 @@ export const foodListModule = {
     statusControl(state, id) {
       const statusItem = state.cart.filter(
         (item) => item.id === id);
+        // console.log(statusItem[0],'2')
         const index = state.cart.findIndex((item) => item.id === id);
         if(statusItem[0].status === "사야돼"){
           
@@ -40,18 +40,30 @@ export const foodListModule = {
           state.cart[index].status = "사야돼"
         }
     },  
-    // statusControlItem(state, id) {
-    //   const statusItem = state.cart.filter(
-    //     (item) => item.id === id);
-    //     const index = state.cart.findIndex((item) => item.id === id);
-    //     if(statusItem[0].status === "사야돼"){
-          
-    //       state.cart[index].status = "샀어"
-    //     } else {
-    //       state.cart[index].status = "사야돼"
-    //     }
-    // },            
-   },
+    statusControlItem(state, id) {
+      // const statusItem = state.cart
+            
+      
+        const index = state.cart[0].recipe.findIndex((item) => item.id === id);
+      
+        if(state.cart[0].recipe[index].status === "사야돼"){
+          state.cart[0].recipe[index].status = "샀어"
+        } else {
+          state.cart[0].recipe[index].status = "사야돼"
+        }
+        
+      
+      // const statusItem = state.cart.recipe.filter(
+      //   (item) => item.id === id);
+ 
+        
+
+     
+      
+      
+     
+    }         
+  },
   actions: {
     async setFoodList({commit}) {
       const response = await foodListApi.getFoodList()
@@ -70,7 +82,14 @@ export const foodListModule = {
       commit('statusControlItem',id)
     }
    },
-  getters: { }
+  getters: { 
+    allFood : (state) => {
+      return state.foodList.length;
+    },
+    allCart : (state) => {
+      return state.cart.length;
+    }
+  }
 }
 
  

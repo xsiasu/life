@@ -18,16 +18,20 @@
     <v-btn icon>
       <v-icon>mdi-heart</v-icon>
     </v-btn>
-    <v-btn
-      icon
-    >
-      <v-badge
-        content="2"
-        color="error"
-      >
-        <v-icon>mdi-shopping-outline</v-icon>
-      </v-badge>
-    </v-btn>
+    <router-link :to="{name:'cart'}">
+      <a>
+        <v-btn
+          icon
+        >
+          <v-badge
+            content="2"
+            color="error"
+          >
+            <v-icon>mdi-shopping-outline</v-icon>
+          </v-badge>
+        </v-btn>
+      </a>
+    </router-link>
 
     <v-menu>
       <template #activator="{ props }">
@@ -55,15 +59,14 @@
 export default {
    data: () => ({
          items: [
+        
         { title: 'Click Me' },
         { title: 'Click Me' },
         { title: 'Click Me' },
+        
         { title: 'Click Me 2' },
       ],
     }),
 }
 </script>
 
-<style>
-
-</style>

@@ -109,7 +109,6 @@
         장바구니
       </h1>
       <v-card
-     
         class="d-flex flex-row"
       >
         <v-card
@@ -118,6 +117,7 @@
         >
           <v-img
             :src="food.image"
+            transition="false"
             max-height="60px"
             max-width="60px"
             cover
@@ -230,11 +230,18 @@ import {mapState} from 'vuex';
   position: absolute;
     right: 0;
     top: 3px;
-    background: rgba(0,0,0,.5)}
+    }
     .remove-item {
   position: absolute;
     right: -3px;
     top: -3px;
-    background: rgba(0,0,0,.5)}      
-    
+    }      
+.swiper-button-prev,
+.swiper-button-next {
+    background: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;}
 </style>
+
+
