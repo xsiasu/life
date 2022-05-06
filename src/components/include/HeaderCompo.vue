@@ -1,6 +1,6 @@
 
 <template>
-  <v-app-bar>
+  <v-app-bar elevation="1">
     <router-link :to="{name:'home'}">
       <a>home</a>
     </router-link>
@@ -24,7 +24,7 @@
           icon
         >
           <v-badge
-            content="2"
+            :content="allCart"
             color="error"
           >
             <v-icon>mdi-shopping-outline</v-icon>
@@ -56,6 +56,7 @@
 
 
 <script>
+import {mapState, mapGetters} from 'vuex';
 export default {
    data: () => ({
          items: [
@@ -67,6 +68,10 @@ export default {
         { title: 'Click Me 2' },
       ],
     }),
+      computed:{
+      ...mapState('cartModule',["cart"]),
+      ...mapGetters('cartModule',["allCart"])
+  },
 }
 </script>
 

@@ -3,33 +3,13 @@
     <h1 class="mt-16">
       매일 먹는거{{ everdayFood }}
     </h1>
-    <router-link :to="{name : 'every'}">
-      <a>더보기</a>
-    </router-link>
-    
-    <swiper
-      class="swiper mt-10"
-      :modules="modules"
-      :free-mode="true"
-      :slides-per-view="2"
-      :space-between="10"
-      :navigation="true"
-      :breakpoints="{
-        '640': {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        '768': {
-          slidesPerView: 4,
-          spaceBetween: 20
-        },
-      }"    
+
+    <v-row
+      v-for="(food,index) in everydayFoodList"
+      :key="index"
+      class="slide"
     >
-      <swiper-slide
-        v-for="(food,index) in everydayFoodList"
-        :key="index"
-        class="slide"
-      >
+      <v-col sm="4">
         <v-hover v-slot="{ isHovering, props }">
           <v-card
             flat
@@ -46,6 +26,8 @@
               @click="addToCart(food)"
             >
               <PopMenu />
+
+
               <template #placeholder>
                 <v-row
                   class="fill-height ma-0"
@@ -69,35 +51,19 @@
             </v-card-subtitle>
           </v-card>
         </v-hover>
-      </swiper-slide>
-    </swiper>   
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 import { mapState, mapGetters } from 'vuex';
-import { Pagination,FreeMode, Navigation} from 'swiper'
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import PopMenu from '@/components/PopMenu'
 
-// import swiper module styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import 'swiper/css/free-mode'
-// more module style...
-
-  export default defineComponent({    
+export default defineComponent({    
     components: {
-      Swiper,
-      SwiperSlide,
       PopMenu
-    },
- setup() {
-      return {
-        modules: [Pagination, FreeMode,Navigation]
-      }
     },
   computed:{
       ...mapState('foodListModule',["everydayFoodList","cart"]),
@@ -115,45 +81,13 @@ import 'swiper/css/free-mode'
   })
 </script>
 <style lang="scss" scoped>
-  @import '@/styles/init.scss';
-  @import '@/assets/css/style.scss';
-
-  .swiper {
-    @include swiper-wrapper();
-    height:auto;
-    &.directive {
-      .swiper-button-next,
-      .swiper-button-prev {
-        background:#fff
-      }
-    }
-  }
-
-  .slide {
-    @include swiper-slide();
-    max-width:226px;
-    align-items:start
-  }
-  .active {border:solid 3px red}
-  .badge-item{
-  position: absolute;
-    right: 0;
-    top: 3px;
-    }
-    .remove-item {
-  position: absolute;
-    right: -3px;
-    top: -3px;
-    }      
-
-
 
  .v-img {
     transition: opacity .4s ease-in-out;
   }
 
   .v-img:not(.on-hover) {
-    // opacity: 0.8;
+    opacity: 0.8;
   }
 
 

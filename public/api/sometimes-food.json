@@ -1,7 +1,7 @@
 {
     "food":[
       {
-        "id":1,
+        "id":15,
         "image": "http://localhost:8080/images/jeyuk.jpeg",
         "name": "제육볶음",
         "subtitle": "매콤한 맛의 고추장 돼지고기 볶음 언제나 기본은 할수 있지",
@@ -9,20 +9,20 @@
           {
             "id":1,
             "material":"돼지고기",
-            "status":"사야돼"
+            "status":"need"
           },
           {"id":2,
-            "material":"상추","status":"사야돼"},
-          {"id":3,"material":"양파","status":"사야돼"},
-          {"id":4,"material":"대파","status":"사야돼"},
-          {"id":5,"material":"굴소스","status":"사야돼"},
-          {"id":6,"material":"고추장","status":"사야돼"}
+            "material":"상추","status":"need"},
+          {"id":3,"material":"양파","status":"need"},
+          {"id":4,"material":"대파","status":"need"},
+          {"id":5,"material":"굴소스","status":"need"},
+          {"id":6,"material":"고추장","status":"need"}
         ],
         "price": 75.00,
         "badge": "new"
       },
       {
-        "id":2,
+        "id":16,
         "image": "http://localhost:8080/images/sakana.jpeg",
         "name": "생선구이",
         "subtitle": "가스레인지 오븐에 넣고 튀기기만 하면 끝, 생선을 잘 선택해야함",
@@ -30,14 +30,14 @@
           {
             "id":1,
             "material":"생선",
-            "status":"사야돼"
+            "status":"need"
           }
         ],
         "price": 92.50,
         "badge": null
       },
       {
-        "id":3,
+        "id":17,
         "image": "http://localhost:8080/images/mandu.jpeg",
         "name": "만두",
         "subtitle": "만두 속을 만들어야 하니 손은 많이 가지만 그래도 만들면 정성도 보이고 보람도 있음",
@@ -45,16 +45,16 @@
           {
             "id":1,
             "material":"돼지고기",
-            "status":"사야돼"
+            "status":"need"
           },
           {"id":2,
-            "material":"만두피","status":"사야돼"}
+            "material":"만두피","status":"need"}
         ],
         "price": 165.90,
         "badge": null
       },
       {
-        "id":4,
+        "id":18,
         "image": "http://localhost:8080/images/donkasu.jpeg",
         "name": "돈가스",
         "subtitle":"호영이 소희도 좋아하는 돈가스 언제 먹어도 맛있어",
@@ -62,14 +62,14 @@
           {
             "id":1,
             "material":"돈가스",
-            "status":"사야돼"
+            "status":"need"
           }
         ],
         "price": 29.50,
         "badge": "sale"
       },
       {
-        "id":5,
+        "id":19,
         "image": "http://localhost:8080/images/mapadubu.png",
         "name": "마파두부",
         "subtitle":"마파두부 소스만 잘 만들면 반찬없이도 잘 먹을수 있는 아이템",
@@ -77,14 +77,14 @@
           {
             "id":1,
             "material":"두부",
-            "status":"사야돼"
+            "status":"need"
           }
         ],
         "price": 75.00,
         "badge": "new"
       },
       {
-        "id":6,
+        "id":20,
         "image": "http://localhost:8080/images/hanbagu.jpeg",
         "name": "함바그",
         "subtitle":"가끔씩 먹어주면 좋은 음식, 호영이도 좋아해",
@@ -92,14 +92,14 @@
           {
             "id":1,
             "material":"갈은돼지고기",
-            "status":"사야돼"
+            "status":"need"
           }
         ],
         "price": 92.50,
         "badge": null
       },
       {
-        "id":7,
+        "id":21,
         "image": "http://localhost:8080/images/yakisoba.jpeg",
         "name": "야키소바",
         "subtitle":"간단하게 만들수 있어서 좋아 가끔씩 먹고 싶어지는 야키소바",
@@ -107,7 +107,7 @@
           {
             "id":1,
             "material":"야기소바면",
-            "status":"사야돼"
+            "status":"need"
           }
         ],
         "price": 165.90,

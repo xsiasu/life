@@ -1,12 +1,19 @@
 <template>
   <div>
     <EverydayBuy />
+    <ManytimesBuy />
+    <SometimesBuy />
+    <CartPreview />
   </div>
 </template>
 
 <script>
-import EverydayBuy from '@/components/home/EverydayBuy.vue';
 import { defineComponent } from 'vue';
+import EverydayBuy from '@/components/home/EverydayBuy.vue'
+import ManytimesBuy from '@/components/home/ManytimesBuys.vue'
+import SometimesBuy from '@/components/home/SometimesBuy.vue'
+import CartPreview from '@/components/home/CartPreview.vue'
+
 
 
 // Components
@@ -14,10 +21,11 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'HomeView',
-
   components: {  
-    
-    EverydayBuy
+    EverydayBuy,
+    ManytimesBuy,
+    SometimesBuy,
+    CartPreview
   },
 });
 </script>

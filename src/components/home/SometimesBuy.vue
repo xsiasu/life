@@ -1,12 +1,11 @@
 <template>
   <div>
     <h1 class="mt-16">
-      매일 먹는거{{ everdayFood }}
+      가끔 먹는거{{ sometimesFood }}
     </h1>
-    <router-link :to="{name : 'every'}">
+    <router-link :to="{name : 'sometimes'}">
       <a>더보기</a>
     </router-link>
-    
     <swiper
       class="swiper mt-10"
       :modules="modules"
@@ -26,7 +25,7 @@
       }"    
     >
       <swiper-slide
-        v-for="(food,index) in everydayFoodList"
+        v-for="(food,index) in sometimesFoodList"
         :key="index"
         class="slide"
       >
@@ -46,6 +45,8 @@
               @click="addToCart(food)"
             >
               <PopMenu />
+
+
               <template #placeholder>
                 <v-row
                   class="fill-height ma-0"
@@ -70,43 +71,55 @@
           </v-card>
         </v-hover>
       </swiper-slide>
-    </swiper>   
+    </swiper>
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { mapState, mapGetters } from 'vuex';
-import { Pagination,FreeMode, Navigation} from 'swiper'
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import PopMenu from '@/components/PopMenu'
+import {mapState, mapGetters} from 'vuex';
 
-// import swiper module styles
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import 'swiper/css/free-mode'
-// more module style...
+  import { Pagination,FreeMode, Navigation} from 'swiper'
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper' 
+  import PopMenu from '@/components/PopMenu'
+
+  // import swiper module styles
+  import 'swiper/css'
+  import 'swiper/css/pagination'
+  import 'swiper/css/navigation'
+  import 'swiper/css/free-mode'
+  // more module style...
 
   export default defineComponent({    
+    name: 'SwiperExampleFreeMode',
+    title: 'Free mode / no fixed positions',
+    url: import.meta.url,    
     components: {
       Swiper,
       SwiperSlide,
       PopMenu
     },
+     props: {
+       
+     },
  setup() {
       return {
         modules: [Pagination, FreeMode,Navigation]
       }
     },
+    data: () => ({
+    }),
   computed:{
-      ...mapState('foodListModule',["everydayFoodList","cart"]),
-      ...mapGetters('foodListModule',["everdayFood"])
+      ...mapState('foodListModule',["sometimesFoodList","cart"]),
+      ...mapGetters('foodListModule',["sometimesFood"])
   },
   created(){
-    this.$store.dispatch("foodListModule/setEverydayFoodList"); 
+    this.$store.dispatch("foodListModule/setSometimesFoodList"); 
   },  
   methods:{
+        delItem(id){
+      this.$store.dispatch('cartModule/delItem',id)
+    },
     addToCart(food) {
       this.$store.dispatch("cartModule/addToCart", food);
     },
@@ -145,7 +158,12 @@ import 'swiper/css/free-mode'
     right: -3px;
     top: -3px;
     }      
-
+.swiper-button-prev,
+.swiper-button-next {
+    background: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;}
 
 
  .v-img {
